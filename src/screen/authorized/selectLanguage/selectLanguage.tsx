@@ -1,5 +1,5 @@
 import {View, Modal, TouchableOpacity, SafeAreaView} from "react-native";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {TextFontBold, TextFontSM} from "../../../component/text";
 import Button from "../../../component/buttons/button";
 import {Colors, SizeFonts} from "../../../styles";
@@ -12,9 +12,12 @@ const selectLanguage = ({navigation}: any) => {
     else setModalTerms(false);
   };
   const onSubmit = () => {
-    setModalTerms(false)
     navigation.navigate("login");
   };
+  useEffect(() => {
+    setModalTerms(false);
+  }, []);
+
   return (
     <View style={styles.container}>
       <SafeAreaView />
